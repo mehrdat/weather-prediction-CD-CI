@@ -103,8 +103,6 @@ model = lgb.train(params, train_data, num_boost_round=100, valid_sets=[test_data
 y_pred = model.predict(X_test, num_iteration=model.best_iteration)
 
 
-
-
 mse = mean_squared_error(y_test, y_pred)
 print("Mean Squared Error:", mse)
 
