@@ -29,6 +29,6 @@ def evaluate_model(model_path, data_path):
     return mse, r2
 
 if __name__ == "__main__":
-    model_path = 'path_to_your_model.pkl'
-    data_path = 'path_to_new_data.csv'
+    model_path = 'model.pkl'
+    data_path = './data/weth001.csv'
     evaluate_model(model_path, data_path)
