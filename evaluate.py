@@ -9,8 +9,8 @@ def evaluate_model(model_path, data_path):
     model = joblib.load(model_path)
     data = load_data(data_path)
     
-    X = data.drop('target', axis=1)
-    y = data['target']
+    X = data.drop('temp', axis=1)
+    y = data['temp']
     
     predictions = model.predict(X)
     mse = mean_squared_error(y, predictions)
