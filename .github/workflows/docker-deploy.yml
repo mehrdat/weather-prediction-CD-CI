@@ -36,7 +36,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: username/repository:latest
+          tags: mehrdat/weather_lightgb:latest
 
   deploy:
     runs-on: ubuntu-latest
