@@ -1,7 +1,9 @@
 # Understanding Climate Change
 
 
+<p align="center">
 <img src="./src/image1.jpg" alt="Climate Change Illustration" width="400" />
+</p>
 Climate change is one of the most pressing issues of our time. It's not just a problem for the future; it's happening right now. To effectively combat climate change, we first need to understand the current state of our climate and weather patterns.
 
 I've dedicated time to studying climate change because I believe it's our responsibility to take action. The first step is understanding the present situation. Climate and weather research is a vast field, and I've started by learning the fundamentals.
@@ -20,9 +22,9 @@ Here's a comparison of different models I tested:
 | LightGBM                     | 0.0653            | 0.9983   | 1.2540     |
 
 ## Why I Chose LightGBM
-
-![LightGBM Illustration](./src/image2.jpg)
-
+<p align="center">
+<img src="./src/image2.jpg" alt="Climate Change Illustration" width="400" />
+</p>
 LightGBM wasn’t the fastest model, but it was easier to manage on GitHub due to its smaller file size. Other models were quicker but had much larger files, making them harder to handle on GitHub. Despite not being the fastest, LightGBM offered a good balance between performance and manageability, especially considering its strong R² score compared to the top models.
 
 As I continue to refine my approach, I plan to explore more advanced models to improve the accuracy and reliability of climate predictions. This journey is just beginning, but every small step counts towards understanding and combating climate change.
