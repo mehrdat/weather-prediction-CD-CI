@@ -1,7 +1,7 @@
 # Understanding Climate Change
 
-![Climate Change Illustration](./src/image1.jpg)
 
+<img src="./src/image1.jpg" alt="Climate Change Illustration" width="400" />
 Climate change is one of the most pressing issues of our time. It's not just a problem for the future; it's happening right now. To effectively combat climate change, we first need to understand the current state of our climate and weather patterns.
 
 I've dedicated time to studying climate change because I believe it's our responsibility to take action. The first step is understanding the present situation. Climate and weather research is a vast field, and I've started by learning the fundamentals.
