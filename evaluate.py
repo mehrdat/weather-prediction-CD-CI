@@ -19,8 +19,13 @@ def load_data(file_path, model_features):
 def evaluate_model(model_path, data_path):
     model = joblib.load(model_path)
     
-    # Load the model features
-    model_features = model.booster_.feature_name()  # For LightGBM models
+    # Get the feature names from the LightGBM model
+    if isinstance(model, joblib.LightGBMModel):
+        model_features = model.booster_.feature_name()
+    elif isinstance(model, joblib.Booster):
+        model_features = model.feature_name()
+    else:
+        raise ValueError("The loaded model is not a LightGBM model.")
     
     data = load_data(data_path, model_features)
     
