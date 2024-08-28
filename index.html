@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change and Weather Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1, h2 {
+            color: #0275d8;
+        }
+        img {
+            width: 90%;
+            height: 400px;
+            display: block;
+            margin: 20px auto;
+            object-fit: cover;
+            object-position: 20% 0; /* Crop 20% from the top */
+            border-radius: 25px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Understanding Climate Change</h1>
+        <img src="./src/image1.jpg" alt="Climate Change Illustration">
+        <p>Climate change is one of the most pressing issues of our time. It's not just a problem for the future; it's happening right now. To effectively combat climate change, we first need to understand the current state of our climate and weather patterns.</p>
+        <p>I've dedicated time to studying climate change because I believe it's our responsibility to take action. The first step is understanding the present situation. Climate and weather research is a vast field, and I've started by learning the fundamentals.</p>
+        
+        <h2>Building and Using a Simple Model</h2>
+        <p>To begin my journey, I built a simple model to analyze climate data. I trained the data using a LightGBM model, which is a powerful tool but has limitations in capturing the full complexity of time series data. To improve the model’s accuracy, I may need to explore more sophisticated models like RNNs or LSTMs.</p>
+        <p>Below is a comparison of different models I tested:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Performance (MAE)</th>
+                    <th>R² Score</th>
+                    <th>Time Taken</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Extra Trees Regressor</td>
+                    <td>0.0383</td>
+                    <td>0.9995</td>
+                    <td>0.5690</td>
+                </tr>
+                <tr>
+                    <td>Random Forest Regressor</td>
+                    <td>0.0417</td>
+                    <td>0.9992</td>
+                    <td>0.8460</td>
+                </tr>
+                <tr>
+                    <td>Gradient Boosting Regressor</td>
+                    <td>0.0860</td>
+                    <td>0.9991</td>
+                    <td>0.7470</td>
+                </tr>
+                <tr>
+                    <td>LightGBM</td>
+                    <td>0.0653</td>
+                    <td>0.9983</td>
+                    <td>1.2540</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+
+        <h2>Why I Chose LightGBM</h2>
+        <img src="./src/image2.jpg" alt="LightGBM Illustration">
+        <p>LightGBM wasn’t the fastest model, but it was easier to manage on GitHub due to its smaller file size. Other models were quicker but had much larger files, making them harder to handle on GitHub. Despite not being the fastest, LightGBM offered a good balance between performance and manageability, especially considering its strong R² score compared to the top models.</p>
+        <p>As I continue to refine my approach, I plan to explore more advanced models to improve the accuracy and reliability of climate predictions. This journey is just beginning, but every small step counts towards understanding and combating climate change.</p>
+
+        <h2>How the Model Works</h2>
+        <p>I developed an API using Flask to allow users to input weather-related data and receive temperature predictions. This API is backed by a LightGBM model trained on various weather attributes. Here’s a brief overview of the process:</p>
+        <ul style="text-align: left;">
+            <li><strong>Data Preparation:</strong> I cleaned and prepared the data, focusing on key variables such as wet-bulb temperature (wetb), dew point (dewpt), relative humidity (rhum), year, and month.</li>
+            <li><strong>Model Training:</strong> The data was split into training and testing sets. I used LightGBM, which is well-suited for handling large datasets and provides good performance with manageable file sizes.</li>
+            <li><strong>API Development:</strong> I created an API that takes input variables like {"wetb": 2.2, "dewpt": -2.1, "rhum": 62.0, "year": 2020.0, "month": 5.0} and returns temperature predictions.</li>
+            <li><strong>Deployment:</strong> The model and API were containerized using Docker, ensuring that they can be easily deployed and scaled. I also set up an evaluation system to monitor model performance continuously.</li>
+        </ul>
+        <p>Here’s a quick explanation of the variables used:</p>
+        <ul style="text-align: left;">
+            <li><strong>Wet-bulb temperature (wetb):</strong> The lowest temperature that can be reached by evaporating water into the air at constant pressure.</li>
+            <li><strong>Dew point (dewpt):</strong> The temperature at which air becomes saturated with moisture and dew can form.</li>
+            <li><strong>Relative Humidity (rhum):</strong> The percentage of moisture in the air relative to the maximum amount of moisture the air can hold at the same temperature.</li>
+            <li><strong>Year and Month:</strong> Temporal variables used to capture seasonal and yearly patterns in the climate data.</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -9,12 +9,6 @@ import numpy as np
 
 
 def load_data(file_path, model_features):
-    #data = pd.read_csv(file_path)
-    
-    # Convert non-numeric columns to numeric
-    #for column in data.columns:
-    #    if data[column].dtype == 'object':
-    #        data[column] = LabelEncoder().fit_transform(data[column])
     
     
     df=pd.read_csv(file_path,parse_dates=['date'])
@@ -38,16 +32,13 @@ def load_data(file_path, model_features):
     df=df.drop(['rain','msl','wdsp','wddir','vappr'],axis=1)
 
 
-    
-    # Ensure the data has the same features as the model was trained on
-    #data = data[model_features]
-    
+  
     return df
 
 def evaluate_model(model_path, data_path):
     model = joblib.load(model_path)
     
-    # Get the feature names from the LightGBM model
+    
     if isinstance(model, lgb.Booster):
         model_features = model.feature_name()
     else:
