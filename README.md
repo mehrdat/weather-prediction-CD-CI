@@ -1,4 +1,4 @@
-# Understanding Climate Change
+# Simple Weather Prediction Model
 
 
 <p align="center">
