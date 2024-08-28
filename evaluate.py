@@ -2,6 +2,7 @@ import joblib
 import pandas as pd
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import LabelEncoder
+import lightgbm as lgb
 
 def load_data(file_path, model_features):
     data = pd.read_csv(file_path)
@@ -20,9 +21,7 @@ def evaluate_model(model_path, data_path):
     model = joblib.load(model_path)
     
     # Get the feature names from the LightGBM model
-    if isinstance(model, joblib.LightGBMModel):
-        model_features = model.booster_.feature_name()
-    elif isinstance(model, joblib.Booster):
+    if isinstance(model, lgb.Booster):
         model_features = model.feature_name()
     else:
         raise ValueError("The loaded model is not a LightGBM model.")
